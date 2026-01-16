@@ -1,8 +1,24 @@
+'use client'
+
+import PageHeader from '@/components/shared/PageHeader'
+import OrderForm, { OrderFormData } from '@/components/order/OrderForm'
+
 export default function OrderPage() {
+  const handleSubmit = (data: OrderFormData) => {
+    // In a real app, this would call an API
+    console.log('Order submitted:', data)
+    alert('Order submitted successfully!')
+  }
+
   return (
-    <div className="container" style={{ padding: '3rem 2rem' }}>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#333' }}>Create New Order</h1>
-      <p style={{ fontSize: '1.1rem', color: '#666' }}>Order page coming soon...</p>
+    <div className="order-page">
+      <div className="container">
+        <PageHeader
+          title="Create New Order"
+          subtitle="Fill out the form below to send an order to your vendor"
+        />
+        <OrderForm onSubmit={handleSubmit} />
+      </div>
     </div>
   )
 }

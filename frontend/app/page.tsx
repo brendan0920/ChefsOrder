@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className="home-container">
@@ -9,8 +11,8 @@ export default function Home() {
             Streamline your ingredient ordering process. Send orders to all your vendors in one place.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">Create New Order</button>
-            <button className="btn-secondary">View Order History</button>
+            <Link href="/order" className="btn-primary">Create New Order</Link>
+            <Link href="/history" className="btn-secondary">View Order History</Link>
           </div>
         </div>
       </section>
